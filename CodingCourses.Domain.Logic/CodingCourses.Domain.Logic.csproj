@@ -10,4 +10,9 @@
     <Folder Include="Services\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CodingCourses.DataAccess.Contracts\CodingCourses.DataAccess.Contracts.csproj" />
+    <ProjectReference Include="..\CodingCourses.Domain.Contracts\CodingCourses.Domain.Contracts.csproj" />
+  </ItemGroup>
+
 </Project>

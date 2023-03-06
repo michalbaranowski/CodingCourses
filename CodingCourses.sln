@@ -3,21 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingCourses.Api", "CodingCourses.Api\CodingCourses.Api.csproj", "{5CA7A25A-160F-4360-B9B3-53E38769C718}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingCourses.Api", "CodingCourses.Api\CodingCourses.Api.csproj", "{5CA7A25A-160F-4360-B9B3-53E38769C718}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{7DE25B10-463B-48FF-975D-FEB159FDEE33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingCourses.Domain.Logic", "CodingCourses.Domain.Logic\CodingCourses.Domain.Logic.csproj", "{360C2902-98A0-4ACC-A99A-18F5441CA766}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingCourses.Domain.Logic", "CodingCourses.Domain.Logic\CodingCourses.Domain.Logic.csproj", "{360C2902-98A0-4ACC-A99A-18F5441CA766}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingCourses.Domain.Contracts", "CodingCourses.Domain.Contracts\CodingCourses.Domain.Contracts.csproj", "{644A7FA2-2DE4-4251-B9FF-D9A3E69E2D51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingCourses.Domain.Contracts", "CodingCourses.Domain.Contracts\CodingCourses.Domain.Contracts.csproj", "{644A7FA2-2DE4-4251-B9FF-D9A3E69E2D51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingCourses.Domain.Tests", "CodingCourses.Domain.Tests\CodingCourses.Domain.Tests.csproj", "{A9D5137A-8B1C-44CB-851F-A7AB345C84A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingCourses.Domain.Tests", "CodingCourses.Domain.Tests\CodingCourses.Domain.Tests.csproj", "{A9D5137A-8B1C-44CB-851F-A7AB345C84A9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", "{FB990411-3213-448E-822B-B4A55F803DF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingCourses.DataAccess.Logic", "CodingCourses.DataAccess.Logic\CodingCourses.DataAccess.Logic.csproj", "{26AD9E2E-4A65-4C14-8533-66868BAEF435}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingCourses.DataAccess.Contracts", "CodingCourses.DataAccess.Contracts\CodingCourses.DataAccess.Contracts.csproj", "{A5E24DFF-E92B-4208-A5C0-11BC5E705CA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingCourses.DataAccess.Contracts", "CodingCourses.DataAccess.Contracts\CodingCourses.DataAccess.Contracts.csproj", "{A5E24DFF-E92B-4208-A5C0-11BC5E705CA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +39,6 @@ Global
 		{A9D5137A-8B1C-44CB-851F-A7AB345C84A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9D5137A-8B1C-44CB-851F-A7AB345C84A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9D5137A-8B1C-44CB-851F-A7AB345C84A9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{26AD9E2E-4A65-4C14-8533-66868BAEF435}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{26AD9E2E-4A65-4C14-8533-66868BAEF435}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{26AD9E2E-4A65-4C14-8533-66868BAEF435}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{26AD9E2E-4A65-4C14-8533-66868BAEF435}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A5E24DFF-E92B-4208-A5C0-11BC5E705CA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A5E24DFF-E92B-4208-A5C0-11BC5E705CA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5E24DFF-E92B-4208-A5C0-11BC5E705CA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -57,7 +51,6 @@ Global
 		{360C2902-98A0-4ACC-A99A-18F5441CA766} = {7DE25B10-463B-48FF-975D-FEB159FDEE33}
 		{644A7FA2-2DE4-4251-B9FF-D9A3E69E2D51} = {7DE25B10-463B-48FF-975D-FEB159FDEE33}
 		{A9D5137A-8B1C-44CB-851F-A7AB345C84A9} = {7DE25B10-463B-48FF-975D-FEB159FDEE33}
-		{26AD9E2E-4A65-4C14-8533-66868BAEF435} = {FB990411-3213-448E-822B-B4A55F803DF7}
 		{A5E24DFF-E92B-4208-A5C0-11BC5E705CA9} = {FB990411-3213-448E-822B-B4A55F803DF7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

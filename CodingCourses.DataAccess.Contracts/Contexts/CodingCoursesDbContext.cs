@@ -11,8 +11,8 @@ namespace CodingCourses.DataAccess.Contracts.Contexts
         public CodingCoursesDbContext(DbContextOptions<CodingCoursesDbContext> options) : base(options)
         { }
 
-        public DbSet<Course> Courses { get; set; }
-        public DbSet<Topic> Topics { get; set; }
+        public virtual DbSet<Course> Courses { get; set; }
+        public virtual DbSet<Topic> Topics { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

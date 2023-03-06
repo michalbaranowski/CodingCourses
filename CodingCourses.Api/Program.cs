@@ -1,4 +1,6 @@
 using CodingCourses.DataAccess.Contracts.Contexts;
+using CodingCourses.Domain.Contracts.Services;
+using CodingCourses.Domain.Logic.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,7 +15,7 @@ builder.Services.AddSwaggerGen();
 var connectionString = Environment.GetEnvironmentVariable("CodingCoursesConnection");
 builder.Services.AddDbContext<CodingCoursesDbContext>(options => options.UseSqlServer(connectionString));
 
-//builder.Services.AddScoped<ICoursesService, CoursesService>();
+builder.Services.AddScoped<ICodingCoursesService, CodingCoursesService>();
 
 var app = builder.Build();
 

@@ -13,6 +13,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CodingCourses.DataAccess.Contracts\CodingCourses.DataAccess.Contracts.csproj" />
+    <ProjectReference Include="..\CodingCourses.Domain.Contracts\CodingCourses.Domain.Contracts.csproj" />
+    <ProjectReference Include="..\CodingCourses.Domain.Logic\CodingCourses.Domain.Logic.csproj" />
   </ItemGroup>
 
 </Project>
