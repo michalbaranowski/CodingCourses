@@ -2,6 +2,7 @@
 using CodingCourses.DataAccess.Contracts.Entities;
 using CodingCourses.Domain.Contracts.Models;
 using CodingCourses.Domain.Contracts.Services;
+using Microsoft.EntityFrameworkCore;
 
 namespace CodingCourses.Domain.Logic.Services
 {
@@ -14,20 +15,46 @@ namespace CodingCourses.Domain.Logic.Services
             _context = context;
         }
 
-        public void Add(CourseModel courseToBeAdded)
+        public void Add(CourseModel course)
         {
-            var entity = new Course()
+            var entityToBeAdded = new Course()
             {
-                Name = courseToBeAdded.Name,
-                Description = courseToBeAdded.Description,
-                Topics = courseToBeAdded.Topics.Select(n => new Topic()
+                Name = course.Name,
+                Description = course.Description,
+                Topics = course.Topics.Select(n => new Topic
                 {
                     OrderNumber = n.OrderNumber,
-                    Value = n.Value,
+                    Value = n.Value
                 }).ToList()
             };
 
-            _context.Courses.Add(entity);
+            _context.Courses.Add(entityToBeAdded);
+            _context.SaveChanges();
+        }
+
+        public void Update(CourseModel course)
+        {
+            if (course.Id.HasValue == false)
+            {
+                return;
+            }
+
+            var entityToBeUpdated = _context.Courses.Include(x => x.Topics).FirstOrDefault(x => x.Id == course.Id);
+
+            if (entityToBeUpdated == null)
+            { 
+                return;
+            }
+
+            _context.Topics.RemoveRange(entityToBeUpdated.Topics);
+            entityToBeUpdated.Name = course.Name;
+            entityToBeUpdated.Description = course.Description;
+            entityToBeUpdated.Topics = course.Topics.Select(n => new Topic
+            {
+                OrderNumber = n.OrderNumber,
+                Value = n.Value
+            }).ToList();
+
             _context.SaveChanges();
         }
 

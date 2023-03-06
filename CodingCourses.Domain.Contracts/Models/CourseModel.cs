@@ -2,6 +2,9 @@
 {
     public class CourseModel
     {
+        public CourseModel()
+        { }
+
         public CourseModel(
             string name,
             string description,
@@ -24,10 +27,10 @@
             Topics = topics;
         }
 
-        public int? Id { get; }
-        public string Name { get; }
-        public string Description { get; }
+        public int? Id { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
 
-        public IList<TopicModel> Topics { get; } = new List<TopicModel>();
+        public IList<TopicModel> Topics { get; set; } = new List<TopicModel>();
     }
 }

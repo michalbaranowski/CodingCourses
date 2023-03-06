@@ -51,14 +51,22 @@ namespace CodingCourses.Domain.Tests.Base
                 }
             }.AsQueryable();
 
-            var mockSet = new Mock<DbSet<Course>>();
-            mockSet.As<IQueryable<Course>>().Setup(m => m.Provider).Returns(courses.Provider);
-            mockSet.As<IQueryable<Course>>().Setup(m => m.Expression).Returns(courses.Expression);
-            mockSet.As<IQueryable<Course>>().Setup(m => m.ElementType).Returns(courses.ElementType);
-            mockSet.As<IQueryable<Course>>().Setup(m => m.GetEnumerator()).Returns(() => courses.GetEnumerator());
+            var courseMockSet = new Mock<DbSet<Course>>();
+            courseMockSet.As<IQueryable<Course>>().Setup(m => m.Provider).Returns(courses.Provider);
+            courseMockSet.As<IQueryable<Course>>().Setup(m => m.Expression).Returns(courses.Expression);
+            courseMockSet.As<IQueryable<Course>>().Setup(m => m.ElementType).Returns(courses.ElementType);
+            courseMockSet.As<IQueryable<Course>>().Setup(m => m.GetEnumerator()).Returns(() => courses.GetEnumerator());
+
+            var topicMockSet = new Mock<DbSet<Topic>>();
+            var topicsQueryable = courses.SelectMany(n => n.Topics).ToList().AsQueryable();
+            topicMockSet.As<IQueryable<Topic>>().Setup(m => m.Provider).Returns(topicsQueryable.Provider);
+            topicMockSet.As<IQueryable<Topic>>().Setup(m => m.Expression).Returns(topicsQueryable.Expression);
+            topicMockSet.As<IQueryable<Topic>>().Setup(m => m.ElementType).Returns(topicsQueryable.ElementType);
+            topicMockSet.As<IQueryable<Topic>>().Setup(m => m.GetEnumerator()).Returns(() => topicsQueryable.GetEnumerator());
 
             var mockContext = new Mock<CodingCoursesDbContext>();
-            mockContext.Setup(x => x.Courses).Returns(mockSet.Object);
+            mockContext.Setup(x => x.Courses).Returns(courseMockSet.Object);
+            mockContext.Setup(x => x.Topics).Returns(topicMockSet.Object);
 
             return mockContext;
         }

@@ -2,6 +2,9 @@
 {
     public class TopicModel
     {
+        public TopicModel()
+        { }
+
         public TopicModel(
             string value,
             int orderNumber)
@@ -20,9 +23,9 @@
             OrderNumber = orderNumber;
         }
 
-        public int? Id { get; }
-        public string Value { get; }
-        public int OrderNumber { get; }
+        public int? Id { get; set; }
+        public string Value { get; set; } = string.Empty;
+        public int OrderNumber { get; set; }
 
     }
 }

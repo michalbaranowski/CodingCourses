@@ -80,6 +80,24 @@ namespace CodingCourses.Domain.Tests.Services
         }
 
         [Test]
+        public void Update_CodingGiant_WontReceiveAddMethodButSaveChanges()
+        {
+            //arrange
+            var dbContextMock = GetDbContextMock();
+            _codingCoursesService = new CodingCoursesService(dbContextMock.Object);
+
+            var firstExistingCourse = _codingCoursesService.GetAll().First();
+
+            //act
+            firstExistingCourse.Name = "Test";
+            _codingCoursesService.Update(firstExistingCourse);
+
+            //assert
+            dbContextMock.Verify(x => x.Courses.Add(It.IsAny<Course>()), Times.Never);
+            dbContextMock.Verify(x => x.SaveChanges(), Times.Once);
+        }
+
+        [Test]
         public void Remove_CodingGiant_ReceiveRemoveMethodAndSaveChanges()
         {
             //arrange
