@@ -15,6 +15,7 @@ builder.Services.AddCors(options => options.AddPolicy(name: "CodingCoursesOrigin
     policy =>
     {
         policy.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader();
+        policy.WithOrigins("http://codingcourses.mbaranowski.it").AllowAnyMethod().AllowAnyHeader();
     }));
 
 var connectionString = Environment.GetEnvironmentVariable("CodingCoursesConnection");
