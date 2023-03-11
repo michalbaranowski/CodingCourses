@@ -34,6 +34,8 @@ export class TopicsModalComponent {
 
     removeTopic(id: number) {
       this.course.topics = this.course.topics.filter(x => x.id !== id);
+      this.dataSource = new MatTableDataSource(this.course.topics);
+      
       this.codingCoursesService.updateCourse(this.course).subscribe(() => this.reloadDataEvent.emit());
     }
 
