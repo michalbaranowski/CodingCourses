@@ -25,7 +25,9 @@ export class TopicsModalComponent {
       private codingCoursesService: CodingCoursesService
     ) {
       this.course = data;
-      this.dataSource = new MatTableDataSource(data.topics)
+
+      let sortedData = this.sortByOrder(data.topics);
+      this.dataSource = new MatTableDataSource(sortedData);
     }
   
     onClick(result: boolean): void {
@@ -41,16 +43,25 @@ export class TopicsModalComponent {
 
     changeValue(topic: Topic) {
       this.course.topics.filter(x => x.id === topic.id)[0].value = topic.value;
-      this.dataSource = new MatTableDataSource(this.course.topics);
+
+      let sortedData = this.sortByOrder(this.course.topics);
+      this.dataSource = new MatTableDataSource(sortedData);
 
       this.codingCoursesService.updateCourse(this.course).subscribe(() => this.reloadDataEvent.emit());
     }
 
     add() {
       this.course.topics.push(this.newTopic);
-      this.dataSource = new MatTableDataSource(this.course.topics);
+      let sortedData = this.sortByOrder(this.course.topics);
+      this.dataSource = new MatTableDataSource(sortedData);
       this.newTopic = new Topic();
 
       this.codingCoursesService.updateCourse(this.course).subscribe(() => this.reloadDataEvent.emit());
+    }
+
+    private sortByOrder(topics: Topic[]) : Topic[] {
+      return topics.sort((a,b) => {
+        return a.orderNumber < b.orderNumber ? -1 : 1
+      });
     }
 }
