@@ -34,8 +34,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseCors("CodingCoursesOrigins");
 
-app.UseHttpsRedirection();
-
 app.UseAuthorization();
 
 app.MapControllers();
