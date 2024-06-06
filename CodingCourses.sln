@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingCourses.DataAccess.Contracts", "CodingCourses.DataAccess.Contracts\CodingCourses.DataAccess.Contracts.csproj", "{A5E24DFF-E92B-4208-A5C0-11BC5E705CA9}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingCourses.DataAccess.Logic", "CodingCourses.DataAccess.Logic\CodingCourses.DataAccess.Logic.csproj", "{B143E8F5-4B08-4E61-B2FE-58EBCECD373B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{A5E24DFF-E92B-4208-A5C0-11BC5E705CA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5E24DFF-E92B-4208-A5C0-11BC5E705CA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5E24DFF-E92B-4208-A5C0-11BC5E705CA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B143E8F5-4B08-4E61-B2FE-58EBCECD373B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B143E8F5-4B08-4E61-B2FE-58EBCECD373B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B143E8F5-4B08-4E61-B2FE-58EBCECD373B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B143E8F5-4B08-4E61-B2FE-58EBCECD373B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,6 +58,7 @@ Global
 		{644A7FA2-2DE4-4251-B9FF-D9A3E69E2D51} = {7DE25B10-463B-48FF-975D-FEB159FDEE33}
 		{A9D5137A-8B1C-44CB-851F-A7AB345C84A9} = {7DE25B10-463B-48FF-975D-FEB159FDEE33}
 		{A5E24DFF-E92B-4208-A5C0-11BC5E705CA9} = {FB990411-3213-448E-822B-B4A55F803DF7}
+		{B143E8F5-4B08-4E61-B2FE-58EBCECD373B} = {FB990411-3213-448E-822B-B4A55F803DF7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8B202644-506F-42FB-9FAC-22036DC69501}
