@@ -34,8 +34,8 @@ export class TopicsModalComponent {
       this.dialogRef.close(result);
     }
 
-    removeTopic(id: number) {
-      this.course.topics = this.course.topics.filter(x => x.id !== id);
+    removeTopic(topic: Topic) {
+      this.course.topics = topic.id ? this.course.topics.filter(x => x.id !== topic.id) : this.course.topics.filter(x => x.orderNumber !== topic.orderNumber && x.value !== topic.value);
       this.dataSource = new MatTableDataSource(this.course.topics);
       
       this.codingCoursesService.updateCourse(this.course).subscribe(() => this.reloadDataEvent.emit());
@@ -60,8 +60,6 @@ export class TopicsModalComponent {
     }
 
     private sortByOrder(topics: Topic[]) : Topic[] {
-      return topics.sort((a,b) => {
-        return a.orderNumber < b.orderNumber ? -1 : 1
-      });
+      return topics.sort((a, b) => a.orderNumber - b.orderNumber);
     }
 }
